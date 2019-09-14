@@ -1,0 +1,12 @@
+>Comandos do curso
+npm install -g @angular cli
+
+ng new NG-CALCULADORA
+
+ng serve
+
+
+==> criando teclado 	
+
+ng g c teclado
+
