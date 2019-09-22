@@ -1,3 +1,4 @@
+/*Bom nosso primeiro passo será selecionar um diretório para a nossa aplicação, depois disso vamos criar o nosso arquivo que será responsável por fazer o transpile de .ts para .js. */
 {
   "compileOnSave": false,
   "compilerOptions": {

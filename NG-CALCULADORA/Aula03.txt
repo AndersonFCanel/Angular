@@ -1,0 +1,17 @@
+Arquivos da aplicação:
+
+ No diretório ../src/app
+
+Componente principal formado pelos arquivos:
+app-component.html (template)
+app-component.ts (classe)
+app-component.css (estilo do componente)
+
+Arquivo de teste
+app.component.spec.ts
+
+Definição do módulo principal da aplicação
+app.mode.ts
+
+Arquivo com as rotas de navegação do módulo
+app-routing.module.ts

@@ -1,3 +1,5 @@
+/*O arquivo package.json é o ponto de partida de qualquer projeto NodeJS. Ele é responsável por descrever o seu projeto, informar as engines (versão do node e do npm), url do repositório, versão do projeto, dependências de produção e de desenvolvimento dentre outras coisas*/
+
 {
   "name": "ng-calculadora",
   "version": "0.0.0",
