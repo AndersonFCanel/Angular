@@ -1,0 +1,26 @@
+Componente pode ser um botão, uma listagem de objetos, um conjunto de outros componentes, um menu, cabeçalho e rodapés, etc.
+
+Um componente deve pertencer a um único módulo.
+    
+Para um componente ser utilizado por outro componente, deve-se fazer isso através do seletor do componente utilizado.
+
+Para um componente (A) de um módulo (X) utilizar um componente (B) do módulo (Y), o módulo (X) precisa importar o módulo (Y). (veremos isso nos próximos slides).
+
+
+==============
+
+Para criar um componente através do anlular cli 
+    ng g c teclado
+
+g = Abreviação de generate
+c = Abreviação de component
+teclado = Nome do componente criado
+
+==============
+
+Componente é formado por um css (estilo), um .ts (classe), um .html (template) e um .ts(para testes). 
+
+================
+Para usar um componente:
+
+Para o Componente Principal utilizar o Componente Teclado basta, para isso, usar o seletor do Componente Teclado no Template do Componente principal.
