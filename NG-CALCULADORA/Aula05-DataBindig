@@ -1,0 +1,40 @@
+Interpolação  ==>  {{ Valor }}
+-Interpolação: Saída de dados é unidirecional, da classe para o template
+-Interpolação: Saída de um valor de uma propriedade do componente no template
+//Exemplo de interpolação , ao ser utilizado o value={{resultado}} o valor 30 será apresentado.
+  public resultado:number = 30;
+
+
+Property Binding  ==>  [propriedade] = ”valor”
+-Property Binding: A interpolação pode ser utilizada em qualquer parte do template, já o Property Binding deve ser utilizada somente para extrair os valores das propriedades de formulários. Nos formulários um property Binding tem o mesmo efeito prático de uma interpolação.
+-Property Binding: Saída de um valor de uma propriedade do componente um atributo no template
+//Exemplo de Property Binding , ao ser utilizado o [value]="resultado" o valor 30 será apresentado.
+
+
+Event Handle   ==>  (event) = ”handler”
+-Evento Handle: Sentido do Template para a Classe. Mediante um evento, um método da classe é chamado.
+-Event Handler: Determina qual função escuta um evento proveniente do template
+//Exemplo de Event Handler, 
+    clicar(valor:number){
+        alert(valor);   
+    }
+    
+    <button (click)="clicar(0)">
+        0
+    </button>
+
+
+
+Two Way Data Binding   ==> [(ngModel)] = ”propriedade”
+-Two Way Data Binding: Fluxo de Informações bi-direcional. Sincronismo entre Template e Classe do Componente.
+-Two way data biding: Atualização bi-direcional do valor do atributo. Tanto componente quanto template são atuailizados.
+-- Exemplo: Primeiramente, para se usar o Two Way Data Binding, deve-se importar o FormsModule no Módulo do Componente que vai usar esse data binding.
+
+INSERINDO:
+<input type="text" [(ngModel)] ="resultado"></input>
+
+EXIBINDO
+<label>{{resultado}}</label>
+
+
+
