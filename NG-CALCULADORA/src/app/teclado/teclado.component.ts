@@ -12,13 +12,27 @@ import { Component, OnInit } from '@angular/core';
 export class TecladoComponent implements OnInit {
 
   //Exemplo de interpolação , ao ver utilizado o value={{resultado}} o valor 30 será apresentado.
-  public resultado:number = 30;
+  //public resultado:number = 30;
   
   //Construtor da classe
   constructor() { }
 
   //Evento do ciclo de vida do componente. Permite inicializar o componente depois que ele recebeu as propriedades de entrada.
   ngOnInit() {
+  }
+
+  public resultado=""; 
+
+  montarResultado(digito:string){
+    this.resultado+=digito;
+  }
+
+  limpar(){
+    this.resultado="";
+  }
+
+  finalizar(){
+    this.resultado=eval(this.resultado);
   }
 
 }
