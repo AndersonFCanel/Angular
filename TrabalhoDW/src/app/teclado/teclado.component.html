@@ -1,104 +1,120 @@
 <div class="container">
 
-     <div class="row">
+    <div class="row">
         <div class="col-4" id="playerOne">
-            <input type="text" readonly = "true" class="form-control"  value={{player1}}>
+            <input type="text" readonly="true" class="form-control" value={{player1}}>
         </div>
         <div class="col-4">
         </div>
         <div class="col-4" id="playerOne">
-                <input type="text" readonly = "true" class="form-control" value={{player2}}>
+            <input type="text" readonly="true" class="form-control" value={{player2}}>
         </div>
     </div>
 
     <div class="row">
-           <br>
-           <br>
+        <br>
+        <br>
     </div>
 
     <div class="row">
-       <div class="col-3 col-lg-3 ">
-       </div> 
+        <div class="col-3 col-lg-3 ">
+        </div>
 
-      <div class="col-2 col-lg-2 ">
-          <button  [disabled]="marcarReadonly[0]"  (click)="marcaJogada(0)" type="button" class="btn btn-secondary btn-lg btn-block" class="btn btn-secondary btn-lg btn-block">{{jogada[0]}}</button>
-      </div> 
-      <div class="col-2 col-lg-2 ">
-          <button [disabled]="marcarReadonly[1]" (click)="marcaJogada(1)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[1]}}</button>
-      </div> 
-      <div class="col-2 col-lg-2">
-          <button [disabled]="marcarReadonly[2]" (click)="marcaJogada(2)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[2]}}</button>
-      </div> 
-      <div class="col-3 col-lg-3 ">
-                  
-      </div> 
+        <div class="col-2 col-lg-2 ">
+            <button [disabled]="marcarReadonly[0]" (click)="marcaJogada(0)" type="button"
+                class="btn btn-secondary btn-lg btn-block"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[0]}}</button>
+        </div>
+        <div class="col-2 col-lg-2 ">
+            <button [disabled]="marcarReadonly[1]" (click)="marcaJogada(1)" type="button"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[1]}}</button>
+        </div>
+        <div class="col-2 col-lg-2">cd
+            <button [disabled]="marcarReadonly[2]" (click)="marcaJogada(2)" type="button"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[2]}}</button>
+        </div>
+        <div class="col-3 col-lg-3 ">
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-3 col-lg-3 ">
+        </div>
+
+        <div class="col-2 col-lg-2 ">
+            <button [disabled]="marcarReadonly[3]" (click)="marcaJogada(3)" type="button"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[3]}}</button>
+        </div>
+        <div class="col-2 col-lg-2 ">
+            <button [disabled]="marcarReadonly[4]" (click)="marcaJogada(4)" type="button"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[4]}}</button>
+        </div>
+        <div class="col-2 col-lg-2">
+            <button [disabled]="marcarReadonly[5]" (click)="marcaJogada(5)" type="button"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[5]}}</button>
+        </div>
+        <div class="col-3 col-lg-3 ">
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-3 col-lg-3 ">
+        </div>
+
+        <div class="col-2 col-lg-2 ">
+            <button [disabled]="marcarReadonly[6]" (click)="marcaJogada(6)" type="button"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[6]}}</button>
+        </div>
+        <div class="col-2 col-lg-2 ">
+            <button [disabled]="marcarReadonly[7]" (click)="marcaJogada(7)" type="button"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[7]}}</button>
+        </div>
+        <div class="col-2 col-lg-2">
+            <button [disabled]="marcarReadonly[8]" (click)="marcaJogada(8)" type="button"
+                class="btn btn-secondary btn-lg btn-block">{{jogada[8]}}</button>
+        </div>
+        <div class="col-3 col-lg-3 ">
+
+        </div>
+    </div>
+
+
+    <p *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+    <p>
+        <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+    </p>
+
+
+    <div class="row">
+        <br>
+        <br>
+        <br>
     </div>
 
     <div class="row">
-       <div class="col-3 col-lg-3 ">
-       </div> 
+        <div class="col-2 col-lg-2 ">
+        </div>
 
-      <div class="col-2 col-lg-2 ">
-          <button [disabled]="marcarReadonly[3]" (click)="marcaJogada(3)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[3]}}</button>
-      </div> 
-      <div class="col-2 col-lg-2 ">
-          <button [disabled]="marcarReadonly[4]" (click)="marcaJogada(4)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[4]}}</button>
-      </div> 
-      <div class="col-2 col-lg-2">
-          <button [disabled]="marcarReadonly[5]" (click)="marcaJogada(5)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[5]}}</button>
-      </div> 
-      <div class="col-3 col-lg-3 ">
-                  
-      </div> 
+        <div class="col-2 col-lg-2 ">
+
+        </div>
+        <div class="col-4 col-lg-4 ">
+            <button (click)="restart()" type="button" class="btn btn-secondary btn-lg btn-block">Reiniciar</button>
+        </div>
+        <div class="col-2 col-lg-2">
+
+        </div>
+        <div class="col-2 col-lg-2">
+
+        </div>
     </div>
-    <div class="row">
-            <div class="col-3 col-lg-3 ">
-            </div> 
-     
-           <div class="col-2 col-lg-2 ">
-               <button [disabled]="marcarReadonly[6]" (click)="marcaJogada(6)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[6]}}</button>
-           </div> 
-           <div class="col-2 col-lg-2 ">
-               <button [disabled]="marcarReadonly[7]" (click)="marcaJogada(7)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[7]}}</button>
-           </div> 
-           <div class="col-2 col-lg-2">
-               <button [disabled]="marcarReadonly[8]" (click)="marcaJogada(8)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[8]}}</button>
-           </div> 
-           <div class="col-3 col-lg-3 ">
-                       
-           </div> 
-         </div>
 
 
-
-
-         <div class="row">
-                <br>
-                <br>
-                <br>
-                <br>
-         </div>
-
-         <div class="row">
-                <div class="col-2 col-lg-2 ">
-                </div> 
-         
-               <div class="col-2 col-lg-2 ">
-
-               </div> 
-               <div class="col-4 col-lg-4 ">
-                   <button  (click)="restart()" type="button" class="btn btn-secondary btn-lg btn-block">Reiniciar</button>
-               </div> 
-               <div class="col-2 col-lg-2">
-                  
-               </div> 
-               <div class="col-2 col-lg-2">
-                           
-               </div> 
-             </div>
-   
-
-         <div *ngIf="winner">
-                winner is {{winner}}
-              </div>
-  </div>
+    <div *ngIf="winner">
+        winner is {{winner}}
+    </div>
+</div>
