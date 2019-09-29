@@ -1,0 +1,8 @@
+<app-select-hero *ngIf="!startGame" (selectedHeroes)="selectedHeroes($event)" (loadGame)="onLoadGame($event)">
+</app-select-hero>
+<div *ngIf="loadGame">
+    <div class="background mt-0 d-flex flex-column justify-content-around" style="min-height: 100vh">
+        <app-game-panel [heroes]="heroes" [firstToPlay]="firstToPlay"></app-game-panel>
+        <app-game-board></app-game-board>
+    </div>
+</div>

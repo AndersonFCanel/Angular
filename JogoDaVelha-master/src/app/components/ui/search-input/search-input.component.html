@@ -1,0 +1,15 @@
+<div (focusout)="onFocusOut()">
+  <div class="input-group border-default m-auto">
+    <input type="text" class="form-control text-center search-input text-dark" [formControl]="heroName" (click)="onFocus()" [placeholder]="placeholder">
+    <div class="input-group-append" [hidden]="!isLoading">
+      <div class="spinner-border text-light" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <ul class="list-group overflow-auto" style="max-height: 200px">
+    <li class="list-group-item list-group-item-action" *ngFor="let hero of heroes"  (mousedown)="onSelectHero(hero)">
+      {{hero.name}}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,36 @@
+<div class="row m-0 align-items-center">
+  <div class="col-lg-3 your-turn">
+    <h1 class="text-center text-white" *ngIf="playerTurn === 1">Sua vez!</h1>
+  </div>
+  <div class="col-lg-6 col-md-12 m-auto">
+    <div class="d-flex align-items-center flex-column mx-auto my-3">
+      <div class="row justify-content-center">
+        <app-board-cell [cellMark]="gameBoard.get('00')" (click)="onSelectBoardCell('00')" cellPosition="00">
+        </app-board-cell>
+        <app-board-cell [cellMark]="gameBoard.get('01')" (click)="onSelectBoardCell('01')" cellPosition="01">
+        </app-board-cell>
+        <app-board-cell [cellMark]="gameBoard.get('02')" (click)="onSelectBoardCell('02')" cellPosition="02">
+        </app-board-cell>
+      </div>
+      <div class="row justify-content-center">
+        <app-board-cell [cellMark]="gameBoard.get('10')" (click)="onSelectBoardCell('10')" cellPosition="10">
+        </app-board-cell>
+        <app-board-cell [cellMark]="gameBoard.get('11')" (click)="onSelectBoardCell('11')" cellPosition="11">
+        </app-board-cell>
+        <app-board-cell [cellMark]="gameBoard.get('12')" (click)="onSelectBoardCell('12')" cellPosition="12">
+        </app-board-cell>
+      </div>
+      <div class="row justify-content-center">
+        <app-board-cell [cellMark]="gameBoard.get('20')" (click)="onSelectBoardCell('20')" cellPosition="20">
+        </app-board-cell>
+        <app-board-cell [cellMark]="gameBoard.get('21')" (click)="onSelectBoardCell('21')" cellPosition="21">
+        </app-board-cell>
+        <app-board-cell [cellMark]="gameBoard.get('22')" (click)="onSelectBoardCell('22')" cellPosition="22">
+        </app-board-cell>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 your-turn">
+    <h1 class="text-center text-white" *ngIf="playerTurn === 2">Sua vez!</h1>
+  </div>
+</div>

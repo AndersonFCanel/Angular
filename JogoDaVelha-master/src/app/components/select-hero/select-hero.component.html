@@ -1,0 +1,20 @@
+<div class="background position-relative overflow-hidden" style="height: 100vh">
+  <div class="row h-100">
+    <div class="col-md-12 col-lg-5 h-100 d-flex justify-content-space-evenly flex-column" id="col">
+      <div class="transform-out">
+        <img class="transform-character-1 d-block mx-auto" [src]="heroPlayer1 ? heroPlayer1.thumbnail : defaultHeroThumbnail" style="max-width: 100%"/>
+      </div>
+      <app-search-input (selectedHero)="onSelectedHero($event, 1)" placeholder="Jogador 1"></app-search-input>
+    </div>
+    <div class="col-md-12 col-lg-2 h-100 d-flex justify-content-center align-items-center flex-column my-5" id="col">
+      <img [src]="vsIcon" class="vs-icon"/>
+      <button type="button" class="btn btn-lg btn-outline-light px-5 text-white font-weight-bold" (click)="onStartGame()" id="start-button">START</button>
+    </div>
+    <div class="col-md-12 col-lg-5 h-100 d-flex justify-content-space-evenly flex-column" id="col">
+      <app-search-input (selectedHero)="onSelectedHero($event, 2)" placeholder="Jogador 2"></app-search-input>
+      <div class="transform-out">
+        <img class="transform-character-2 d-block mx-auto" [src]="heroPlayer2 ? heroPlayer2.thumbnail : defaultHeroThumbnail" style="max-width: 100%"/>
+      </div>
+    </div>
+  </div>
+</div>

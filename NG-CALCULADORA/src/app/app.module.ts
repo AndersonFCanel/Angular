@@ -6,6 +6,7 @@ import { TecladoComponent } from './teclado/teclado.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 
+//Dizendo aoangular que este é um módulo
 @NgModule({
   declarations: [
     /*
