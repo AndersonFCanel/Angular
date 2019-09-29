@@ -62,12 +62,40 @@
                <button [disabled]="marcarReadonly[7]" (click)="marcaJogada(7)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[7]}}</button>
            </div> 
            <div class="col-2 col-lg-2">
-               <button [disabled]="marcarReadonly[9]" (click)="marcaJogada(8)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[8]}}</button>
+               <button [disabled]="marcarReadonly[8]" (click)="marcaJogada(8)" type="button" class="btn btn-secondary btn-lg btn-block">{{jogada[8]}}</button>
            </div> 
            <div class="col-3 col-lg-3 ">
                        
            </div> 
          </div>
+
+
+
+
+         <div class="row">
+                <br>
+                <br>
+                <br>
+                <br>
+         </div>
+
+         <div class="row">
+                <div class="col-2 col-lg-2 ">
+                </div> 
+         
+               <div class="col-2 col-lg-2 ">
+
+               </div> 
+               <div class="col-4 col-lg-4 ">
+                   <button  (click)="restart()" type="button" class="btn btn-secondary btn-lg btn-block">Reiniciar</button>
+               </div> 
+               <div class="col-2 col-lg-2">
+                  
+               </div> 
+               <div class="col-2 col-lg-2">
+                           
+               </div> 
+             </div>
    
 
          <div *ngIf="winner">
