@@ -22,7 +22,7 @@ export class TecladoComponent implements OnInit {
   ngOnInit() {
 
     //inicializando os vetores
-    for(var counter:number = 0; counter<9; counter++){
+    for (var counter: number = 0; counter < 9; counter++) {
 
       this.jogada[counter] = "";
       this.marcarReadonly[counter] = false;
@@ -43,12 +43,12 @@ export class TecladoComponent implements OnInit {
 
   }
 
-  marcaJogada(casaTabuleiro:number) {
+  marcaJogada(casaTabuleiro: number) {
     console.log("vez: " + this.vez);
 
     if (this.vez % 2 == 0) {
       console.log("Casa marcada " + casaTabuleiro);
-      
+
       this.vez = this.vez + 1;
       this.jogada[casaTabuleiro] = "O"
       this.readonly(casaTabuleiro);
@@ -60,7 +60,7 @@ export class TecladoComponent implements OnInit {
     }
     else {
       console.log("Casa marcada " + casaTabuleiro);
-      
+
       this.vez = this.vez + 1;
       this.jogada[casaTabuleiro] = "X"
       this.readonly(casaTabuleiro);
@@ -76,48 +76,105 @@ export class TecladoComponent implements OnInit {
 
   checarVitoria() {
 
-    if( (this.jogada[0] == "X" && this.jogada[1] == "X" && this.jogada[2] == "X") || 
-        (this.jogada[3] == "X" && this.jogada[4] == "X" && this.jogada[5] == "X") ||
-        (this.jogada[6] == "X" && this.jogada[7] == "X" && this.jogada[8] == "X") || 
-        (this.jogada[0] == "X" && this.jogada[3] == "X" && this.jogada[6] == "X") ||
-        (this.jogada[1] == "X" && this.jogada[4] == "X" && this.jogada[7] == "X") ||
-        (this.jogada[2] == "X" && this.jogada[3] == "X" && this.jogada[8] == "X") ||
-        (this.jogada[0] == "X" && this.jogada[4] == "X" && this.jogada[8] == "X") || 
-        (this.jogada[2] == "X" && this.jogada[4] == "X" && this.jogada[6] == "X")) {
-        
-        this.pontoPlayer1 = this.pontoPlayer1 + 1;
+    if ((this.jogada[0] == "X" && this.jogada[1] == "X" && this.jogada[2] == "X") ||
+      (this.jogada[3] == "X" && this.jogada[4] == "X" && this.jogada[5] == "X") ||
+      (this.jogada[6] == "X" && this.jogada[7] == "X" && this.jogada[8] == "X") ||
+      (this.jogada[0] == "X" && this.jogada[3] == "X" && this.jogada[6] == "X") ||
+      (this.jogada[1] == "X" && this.jogada[4] == "X" && this.jogada[7] == "X") ||
+      (this.jogada[2] == "X" && this.jogada[3] == "X" && this.jogada[8] == "X") ||
+      (this.jogada[0] == "X" && this.jogada[4] == "X" && this.jogada[8] == "X") ||
+      (this.jogada[2] == "X" && this.jogada[4] == "X" && this.jogada[6] == "X")) {
 
-        console.log("X venceu");
-        
-        return true;
+      this.pontoPlayer1 = this.pontoPlayer1 + 1;
 
-      } else  
-      if( (this.jogada[0] == "O" && this.jogada[1] == "O" && this.jogada[2] == "O") ||
-          (this.jogada[3] == "O" && this.jogada[4] == "O" && this.jogada[5] == "O") || 
-          (this.jogada[6] == "O" && this.jogada[7] == "O" && this.jogada[8] == "O") ||
-          (this.jogada[0] == "O" && this.jogada[3] == "O" && this.jogada[6] == "O") ||
-          (this.jogada[1] == "O" && this.jogada[4] == "O" && this.jogada[7] == "O") || 
-          (this.jogada[2] == "O" && this.jogada[3] == "O" && this.jogada[8] == "O") || 
-          (this.jogada[0] == "O" && this.jogada[4] == "O" && this.jogada[8] == "O") || 
-          (this.jogada[2] == "O" && this.jogada[4] == "O" && this.jogada[6] == "O") ) {
+      console.log("X venceu");
 
-          this.pontoPlayer2 = this.pontoPlayer2 + 1;
+      return "X";
+
+    } else
+      if ((this.jogada[0] == "O" && this.jogada[1] == "O" && this.jogada[2] == "O") ||
+        (this.jogada[3] == "O" && this.jogada[4] == "O" && this.jogada[5] == "O") ||
+        (this.jogada[6] == "O" && this.jogada[7] == "O" && this.jogada[8] == "O") ||
+        (this.jogada[0] == "O" && this.jogada[3] == "O" && this.jogada[6] == "O") ||
+        (this.jogada[1] == "O" && this.jogada[4] == "O" && this.jogada[7] == "O") ||
+        (this.jogada[2] == "O" && this.jogada[3] == "O" && this.jogada[8] == "O") ||
+        (this.jogada[0] == "O" && this.jogada[4] == "O" && this.jogada[8] == "O") ||
+        (this.jogada[2] == "O" && this.jogada[4] == "O" && this.jogada[6] == "O")) {
+
+        this.pontoPlayer2 = this.pontoPlayer2 + 1;
 
         console.log("O venceu");
-        return true;
+        return "O";
 
-      }else
-      {
+      } else {
         console.log("Ainda não há vencedor");
-        return false;
-      }      
+        return ""
+      }
   }
+
+
+
+
 
   restart() {
-   
-    this.ngOnInit() 
+
+    this.ngOnInit()
   }
 
+
+
+
+  interface Alert {
+    type: string;
+    message: string;
+  }
+  
+  const ALERTS: Alert[] = [{
+      type: 'success',
+      message: 'This is an success alert',
+    }, {
+      type: 'info',
+      message: 'This is an info alert',
+    }, {
+      type: 'warning',
+      message: 'This is a warning alert',
+    }, {
+      type: 'danger',
+      message: 'This is a danger alert',
+    }, {
+      type: 'primary',
+      message: 'This is a primary alert',
+    }, {
+      type: 'secondary',
+      message: 'This is a secondary alert',
+    }, {
+      type: 'light',
+      message: 'This is a light alert',
+    }, {
+      type: 'dark',
+      message: 'This is a dark alert',
+    }
+  ];
+  
+  @Component({
+    selector: 'ngbd-alert-closeable',
+    templateUrl: './alert-closeable.html'
+  })
+  export class NgbdAlertCloseable {
+  
+    alerts: Alert[];
+  
+    constructor() {
+      this.reset();
+    }
+  
+    close(alert: Alert) {
+      this.alerts.splice(this.alerts.indexOf(alert), 1);
+    }
+  
+    reset() {
+      this.alerts = Array.from(ALERTS);
+    }
 
 
 }
