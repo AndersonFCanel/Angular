@@ -7,53 +7,53 @@ import { ValidacaoService } from '../validacao.service';
   styleUrls: ['./teclado.component.css']
 })
 export class TecladoComponent implements OnInit {
-
-  public resultado="";
   
-  public jogada = " ";
-  public vez = 1;
+  public jogada = [];
+  public vez = 0;
+  public player1 = "UM";
+  public player2 = "DOIS";
 
-  public player1 = "meu pau";
-  public player2 = "meu ovo";
+  public marcarReadonly = [false,false,false,false,false,false,false,false,false];
 
+
+  
   constructor(private validacao:ValidacaoService) { }
 
   ngOnInit() {
   }
 
+readonly(casaTabuleiro:Int)
+{
+  this.marcarReadonly[casaTabuleiro] = true;
+}
 
-  marcaJogada()
+  marcaJogada( casaTabuleiro:Int )
   {
+    console.log("vez: " + this.vez);
     if(this.vez%2 == 0)
     {
-      console.log("PAR");
+      console.log("Casa marcada " + casaTabuleiro) ;
       this.vez = this.vez + 1;
-      this.jogada = "O"
+      this.jogada[casaTabuleiro] = "O"
+      this.readonly(casaTabuleiro);
+
       return this.jogada ;
     }
     else  
     {
       console.log("IMPAR");
       this.vez = this.vez + 1;
-      this.jogada = "X";
+      this.jogada[casaTabuleiro] = "X"
+      this.readonly(casaTabuleiro);
+      
       return this.jogada;
     }
 
 
   }
 
-  montarResultado(digito:String){
-    if(this.validacao.ehValidaExpressao(digito, this.resultado)){
-      this.resultado+=digito;
-    }
-  }
 
-  limpar(){
-    this.resultado="";
-  }
 
-  finalizar(){
-    this.resultado=eval(this.resultado).toString();
-  }
 
+  
 }
