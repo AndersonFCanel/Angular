@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { TecladoComponent } from './teclado/teclado.component';
 
 import { AlertModule, ButtonsModule } from 'ngx-bootstrap';
-import { InformacoesModule } from './informacoes/informacoes.module';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { InformacoesModule } from './informacoes/informacoes.module';
     AppRoutingModule,
     AlertModule.forRoot(),
     ButtonsModule.forRoot(),
-    InformacoesModule
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SobreComponent } from './sobre/sobre.component';
+import { ModalInfoComponent } from './modal-info/modal-info.component';
 
 @NgModule({
-  declarations: [SobreComponent],
+  declarations: [SobreComponent, ModalInfoComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    
   ],
   exports: [
-    SobreComponent
+    SobreComponent,
   ]
 })
 export class InformacoesModule { }
