@@ -15,7 +15,7 @@ export class TecladoComponent implements OnInit {
   public pontoPlayer1 = 0;
   public pontoPlayer2 = 0;
   public fim = false;
-  
+
 
   public marcarReadonly = [];
   public corBotao = [];
@@ -53,13 +53,13 @@ export class TecladoComponent implements OnInit {
       this.fim = true;
     }
 
-    if(vencedor=="O"){
-      this.pontoPlayer1 ++;
-    }else{
-      this.pontoPlayer2 ++;
+    if (vencedor == "O") {
+      this.pontoPlayer1++;
+    } else {
+      this.pontoPlayer2++;
     }
 
-//alert(vencedor + " venceu!");
+    //alert(vencedor + " venceu!");
   }
 
   /*imprimeCasaMarcada() {
