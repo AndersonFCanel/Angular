@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { TecladoComponent } from 'src/app/teclado/teclado.component';
+
 
 @Component({
   selector: 'ngbd-modal-content',
@@ -14,12 +16,25 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
       <p>Hello, {{name}}!</p>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+      <!--<button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    -->
+    <button (click)="restart(false)" type="button" class="btn btn-warning btn-lg btn-block">Limpar
+                Tabuleiro</button>
     </div>
   `
 })
 export class NgbdModalContent {
   @Input() name;
+  
 
-  constructor(public activeModal: NgbActiveModal) {}
+  
+    
+//    ts = new TecladoComponent();
+
+    //ts.restart();
+    
+
+  constructor(public activeModal: NgbActiveModal) {
+
+  }
 }

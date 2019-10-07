@@ -21,7 +21,9 @@ export class TecladoComponent implements OnInit {
   public marcarReadonly = [];
   public corBotao = [];
 
-  constructor(private validacao: ValidacaoService) { }
+  //constructor(private validacao: ValidacaoService) { }
+
+  constructor() { }
 
   ngOnInit() {
 
@@ -174,7 +176,7 @@ export class TecladoComponent implements OnInit {
 
 
 
-  restart(reiniciarPartida: boolean) {
+  public restart(reiniciarPartida: boolean) {
 
     if (reiniciarPartida) {
       this.pontoPlayer1 = 0;
