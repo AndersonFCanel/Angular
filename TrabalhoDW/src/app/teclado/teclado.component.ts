@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ValidacaoService } from '../validacao.service';
+import { Injectable } from '@angular/core';
+//import { ValidacaoService } from '../validacao.service';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-teclado',
